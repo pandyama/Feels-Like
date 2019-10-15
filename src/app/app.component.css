@@ -1,0 +1,44 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container {
+    width: 50%;
+    margin: 0 auto
+  }
+
+  mat-grid-tile {
+    background: lightblue;
+    border-radius: 5%;
+    display: grid;
+  box-shadow: 10px 10px 5px 0px rgba(179,179,179,1);
+  cursor: pointer;
+  background-color: white;
+  border-radius: 1.75rem;
+  animation: 1.25s ease-in-out 0ms 1 fadein;
+  }
+
+  .temp{
+    align-self: end;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  }
+
+  .title{
+    align-self: end;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 30;
+  letter-spacing: 0.1rem;
+  }
+
+  .footer{
+    align-self: end;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 80;
+  letter-spacing: 0.1rem;
+  }

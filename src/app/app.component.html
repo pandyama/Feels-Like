@@ -1,0 +1,101 @@
+<div class="example-container">
+  <mat-form-field>
+    <input #testMP (keyup.enter)="onEnter(testMP.value)" matInput placeholder="Search your city" [(ngModel)]="value">
+  </mat-form-field>
+  <!-- <button type="submit" (submit)="onSubmit()">Search</button>-->
+</div>
+
+<div>
+  <mat-grid-list name="mp" cols="7" rowHeight="2:3" [gutterSize]="'10px'">
+    <span class="temp">
+
+      <mat-grid-tile [ngStyle]="{'background-color':color[0]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[0]]}}
+        </mat-grid-tile-header>
+        {{weather[0]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[0]}}
+          <br>Low {{lowWeather[0]}}
+        </mat-grid-tile-footer>
+
+      </mat-grid-tile>
+
+    </span>
+    <span class="temp">
+      <mat-grid-tile [ngStyle]="{'background-color':color[1]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[1]]}}
+        </mat-grid-tile-header>
+        {{weather[1]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[1]}}
+          <br>Low {{lowWeather[1]}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </span>
+    <span class="temp">
+      <mat-grid-tile [ngStyle]="{'background-color':color[2]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[2]]}}
+        </mat-grid-tile-header>{{weather[2]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[2]}}
+          <br>Low {{lowWeather[2]}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </span>
+    <span class="temp">
+      <mat-grid-tile [ngStyle]="{'background-color':color[3]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[3]]}}
+        </mat-grid-tile-header>{{weather[3]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[3]}}
+          <br>Low {{lowWeather[3]}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </span>
+    <span class="temp">
+      <mat-grid-tile [ngStyle]="{'background-color':color[4]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[4]]}}
+        </mat-grid-tile-header>{{weather[4]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[4]}}
+          <br>Low {{lowWeather[4]}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </span>
+    <span class="temp">
+      <mat-grid-tile [ngStyle]="{'background-color':color[5]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[5]]}}
+        </mat-grid-tile-header>{{weather[5]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[5]}}
+          <br>Low {{lowWeather[5]}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </span>
+    <span class="temp">
+      <mat-grid-tile [ngStyle]="{'background-color':color[6]}">
+        <mat-grid-tile-header class="title">
+          {{dayOfWeek[passWeek[6]]}}
+        </mat-grid-tile-header>{{weather[6]}}&#8451;
+        <mat-grid-tile-footer class = "footer">
+          High {{highWeather[6]}}
+          <br>Low {{lowWeather[6]}}
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </span>
+
+    <!--<mat-grid-tile>{{weather[1]}}</mat-grid-tile>
+      <mat-grid-tile>{{weather[2]}}</mat-grid-tile>
+      <mat-grid-tile>{{weather[3]}}</mat-grid-tile>
+      <mat-grid-tile>{{weather[4]}}</mat-grid-tile>
+      <mat-grid-tile>{{weather[5]}}</mat-grid-tile>
+      <mat-grid-tile>{{weather[6]}}</mat-grid-tile>
+      -->
+  </mat-grid-list>
+</div>
