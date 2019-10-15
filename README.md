@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
-Klima uses a simple OpenWeather REST API to pull 7 day basic weather forecast for the searched city
+Klima uses a simple OpenWeather REST API to pull 7 day basic weather forecast for the searched city. </br>
 The website is built as a Single-Page Application using standard principles of Angular
 - 2 way data-binding
 - HTTP client to retrieve REST API data and dynamically display on front-end
