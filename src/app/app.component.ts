@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'klima';
   value: string;
-  key = "GET YOUR OWN KEY";
+  key = "0fe37647bf3c4095418a1c5392bb60cc";
   data;
   day1 = 0;
   high = 0;
