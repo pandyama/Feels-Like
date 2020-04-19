@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatGridListModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
