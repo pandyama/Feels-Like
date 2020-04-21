@@ -1,5 +1,7 @@
 <header class="header">
-  <h2>Feels Like</h2>
+  
+  <h2>Feels Like {{feelslike}}&#8451;</h2>
+  
   <mat-form-field>
     <input #testMP (keyup.enter)="onEnter(testMP.value)" matInput placeholder="Search your city" [(ngModel)]="value">
   </mat-form-field>
@@ -7,10 +9,18 @@
 </header>
 
 
+<div [ngClass]="{'weatherStorm': id >= 200 && id < 300, 
+                 'weatherDrizzle': id >= 300 && id < 400,
+                 'weatherRain': id >= 500 && id < 600,
+                 'weatherSnow': id >= 600 && id < 700,
+                 'atmosphere': id >= 700 && id < 800,
+                 'cloud': id >= 800 && id < 800}">
+  <h1>{{city}}</h1>
+
 <div class="weathertile">
-
   <ul>
-    <li>
+
+    <li *ngFor="let w of weather">
       <mat-card class="projectCard">
         <mat-card-title class="cardTitle">
           Monday
@@ -24,103 +34,19 @@
         </mat-card-subtitle>
         <mat-list>
           <mat-list-item>
-            10 C
+            {{w[1]}}
           </mat-list-item>
           <mat-list-item>
-            5 C
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card class="projectCard">
-        <mat-card-title class="cardTitle">
-          Monday
-
-        </mat-card-title>
-        <!-- <mat-card-subtitle>
-            Feb 2020 - March 2020
-        </mat-card-subtitle>-->
-        <mat-card-subtitle>
-
-        </mat-card-subtitle>
-        <mat-list>
-          <mat-list-item>
-            10 C
+            {{w[3]}}
           </mat-list-item>
           <mat-list-item>
-            5 C
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card class="projectCard">
-        <mat-card-title class="cardTitle">
-          Monday
-
-        </mat-card-title>
-        <!-- <mat-card-subtitle>
-            Feb 2020 - March 2020
-        </mat-card-subtitle>-->
-        <mat-card-subtitle>
-
-        </mat-card-subtitle>
-        <mat-list>
-          <mat-list-item>
-            10 C
-          </mat-list-item>
-          <mat-list-item>
-            5 C
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card class="projectCard">
-        <mat-card-title class="cardTitle">
-          Monday
-
-        </mat-card-title>
-        <!-- <mat-card-subtitle>
-            Feb 2020 - March 2020
-        </mat-card-subtitle>-->
-        <mat-card-subtitle>
-
-        </mat-card-subtitle>
-        <mat-list>
-          <mat-list-item>
-            10 C
-          </mat-list-item>
-          <mat-list-item>
-            5 C
-          </mat-list-item>
-        </mat-list>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card class="projectCard">
-        <mat-card-title class="cardTitle">
-          Monday
-
-        </mat-card-title>
-        <!-- <mat-card-subtitle>
-            Feb 2020 - March 2020
-        </mat-card-subtitle>-->
-        <mat-card-subtitle>
-
-        </mat-card-subtitle>
-        <mat-list>
-          <mat-list-item>
-            10 C
-          </mat-list-item>
-          <mat-list-item>
-            5 C
+            {{w[2]}}
           </mat-list-item>
         </mat-list>
       </mat-card>
     </li>
   </ul>
+  </div>
   <!-- <mat-grid-list name="mp" cols="7" rowHeight="2:3" [gutterSize]="'10px'">
     <span class="temp">
 

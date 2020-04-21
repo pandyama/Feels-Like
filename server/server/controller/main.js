@@ -68,8 +68,6 @@ exports.weather = function(query, callback){
     //     }).on('error', function(err){
     //         console.log(err.message);
     //     });
-
-
     // }).end();
 
 
@@ -87,6 +85,7 @@ exports.weather = function(query, callback){
                 .then(res =>{
                     //console.log(res.data);
                     var test2 = [];
+                    test2.push(res.data.current.weather[0].id);
                     test2.push(Math.round(res.data.current.temp-273.15));
                     test2.push(Math.round(res.data.current.feels_like-273.15));
                     test2.push(res.data.current.weather[0].description);
@@ -94,8 +93,9 @@ exports.weather = function(query, callback){
 
                     for(var i = 0; i < 5; i++){
                         var test = [];
-                        test.push(Math.round((res.data.daily[i].temp.min)-273.15));
+                        test.push(res.data.daily[i].weather[0].id);
                         test.push(Math.round((res.data.daily[i].temp.max)-273.15));
+                        test.push(Math.round((res.data.daily[i].temp.min)-273.15));
                         test.push(res.data.daily[i].weather[0].description);
                         
                         forecast.push(test);

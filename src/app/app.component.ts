@@ -14,10 +14,15 @@ export class AppComponent {
   day1 = 0;
   high = 0;
   low = 0;
-  weather = [];
+  weather: any = [];
   highWeather = [];
   lowWeather = [];
+  feelslike;
+  current;
+  description;
+  city;
   color = [];
+  id;
   date: Date = new Date();
 
   dayOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
@@ -32,7 +37,21 @@ export class AppComponent {
       headers: {city: this.value}
     })
       .subscribe(res =>{
-          console.log(res);
+          this.weather.push(res[1]);
+          this.weather.push(res[2]);
+          this.weather.push(res[3]);
+          this.weather.push(res[4]);
+          this.weather.push(res[5]);
+          // for(var i = 1; i < 5; i++){
+          //    this.weather.push(res[i]);
+          // }
+          this.feelslike = res[0][2];
+          this.current = res[0][1];
+          this.description = res[0][3];
+          this.city = this.value;
+          this.id = res[0][0];
+          console.log(res[0]);
+          console.log(this.id);
       });
   }
 
