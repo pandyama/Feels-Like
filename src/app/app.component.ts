@@ -21,6 +21,7 @@ export class AppComponent {
   current;
   description;
   city;
+  currentDescription;
   color = [];
   id;
   date: Date = new Date();
@@ -48,7 +49,8 @@ export class AppComponent {
           this.feelslike = res[0][2];
           this.current = res[0][1];
           this.description = res[0][3];
-          this.city = this.value;
+          this.city = this.value.toUpperCase();
+          this.currentDescription = res[0][3];
           this.id = res[0][0];
           console.log(res[0]);
           console.log(this.id);

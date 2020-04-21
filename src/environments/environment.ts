@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase:{
+    apiKey: "AIzaSyCihQnwEhxuoNNsqgTw--RLb5zPyCdFxYE",
+    authDomain: "feelslike-6f449.firebaseapp.com",
+    databaseURL: "https://feelslike-6f449.firebaseio.com",
+    projectId: "feelslike-6f449",
+    storageBucket: "feelslike-6f449.appspot.com",
+    messagingSenderId: "693248680149",
+    appId: "1:693248680149:web:0c6732060f573a6091825c"
+  }
 };
 
 /*
@@ -14,3 +23,25 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+// <!-- The core Firebase JS SDK is always required and must be listed first -->
+// <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+// <!-- TODO: Add SDKs for Firebase products that you want to use
+//      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+// <script>
+//   // Your web app's Firebase configuration
+//   var firebaseConfig = {
+//     apiKey: "AIzaSyCihQnwEhxuoNNsqgTw--RLb5zPyCdFxYE",
+//     authDomain: "feelslike-6f449.firebaseapp.com",
+//     databaseURL: "https://feelslike-6f449.firebaseio.com",
+//     projectId: "feelslike-6f449",
+//     storageBucket: "feelslike-6f449.appspot.com",
+//     messagingSenderId: "693248680149",
+//     appId: "1:693248680149:web:0c6732060f573a6091825c"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+// </script>

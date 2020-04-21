@@ -2,7 +2,7 @@
   
   <h2>Feels Like {{feelslike}}&#8451;</h2>
   
-  <mat-form-field>
+  <mat-form-field [style.fontSize.px]="30">
     <input #testMP (keyup.enter)="onEnter(testMP.value)" matInput placeholder="Search your city" [(ngModel)]="value">
   </mat-form-field>
   <!-- <button type="submit" (submit)="onSubmit()">Search</button>-->
@@ -14,8 +14,9 @@
                  'weatherRain': id >= 500 && id < 600,
                  'weatherSnow': id >= 600 && id < 700,
                  'atmosphere': id >= 700 && id < 800,
-                 'cloud': id >= 800 && id < 800}">
+                 'clouds': id >= 800 && id < 805}">
   <h1>{{city}}</h1>
+  <h2 class="description" >{{currentDescription}}</h2>
 
 <div class="weathertile">
   <ul>
