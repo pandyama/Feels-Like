@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -26,12 +27,19 @@ export class AppComponent {
   id;
   date: Date = new Date();
 
+  cookieValue;
+  saved
+
   dayOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
   dayCounter = this.date.getDay();
   passWeek = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
+  ngOnInit(): void{
+    this.saved = this.cookieService.get('Test');
+    console.log("current searched city is " + this.cookieService.get('Test'));
+  }
 
   getWeather(){
     return this.http.get("http://localhost:3100/weather",{
@@ -54,6 +62,10 @@ export class AppComponent {
           this.id = res[0][0];
           console.log(res[0]);
           console.log(this.id);
+          this.cookieService.set( 'Test', this.city, 2 );
+          this.cookieValue = this.cookieService.get('Test');
+          this.saved = this.cookieService.get('Test');
+          console.log("current searched city is " + this.cookieValue);
       });
   }
 
