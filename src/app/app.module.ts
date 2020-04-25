@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule,MatSelectModule} from '@angular/material';
+import {MatFormFieldModule,MatSelectModule, MatToolbarModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -31,7 +31,8 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    MatToolbarModule
     
   ],
   providers: [

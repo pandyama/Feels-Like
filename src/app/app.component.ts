@@ -85,6 +85,8 @@ export class AppComponent {
           this.cookieValue = this.cookieService.get('Test');
           this.saved = this.cookieService.get('Test');
           console.log("current searched city is " + this.cookieValue);
+
+          this.show = true;
       });
   }
 
