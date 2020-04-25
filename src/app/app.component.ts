@@ -21,6 +21,7 @@ export class AppComponent {
   date: Date = new Date();
   cookieValue;
   saved;
+  show: boolean;
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
@@ -94,6 +95,8 @@ export class AppComponent {
   onEnter(value: string) {
     let date: Date = new Date();
     console.log(date.getDay());
+
+    this.show = true;
 
     this.weather = [];
     this.color = [];

@@ -15,7 +15,7 @@
                  'weatherSnow': id >= 600 && id < 700,
                  'atmosphere': id >= 700 && id < 800,
                  'clouds': id >= 800 && id < 805}">
-  <h1>{{saved}} {{current}}&#8451;</h1>
+  <h1 *ngIf="show">{{saved}} {{current}}&#8451;</h1>
   <h2 class="description" >{{currentDescription}}</h2>
 
 <div class="weathertile">
