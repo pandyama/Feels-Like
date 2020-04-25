@@ -13,6 +13,3 @@ Below is the look and feel of the app
 ![1](https://github.com/pandyama/Klima/blob/master/Capture.PNG)
 ---
 
-![1](https://github.com/pandyama/Klima/blob/master/Capture1.PNG)
----
-
