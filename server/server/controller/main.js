@@ -43,6 +43,7 @@ function DayAsString(dayIndex) {
 let city = 'toronto';
 let lat = 0;
 let lon = 0;
+let dte;
 let current = 0;
 let current_feels = 0;
 let current_description = "";
@@ -80,11 +81,15 @@ exports.weather = function(query, callback){
             // console.log(res.data.coord.lat);
             lat = res.data.coord.lat;
             lon = res.data.coord.lon;
+            
 
             axios.get(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=0fe37647bf3c4095418a1c5392bb60cc`)
                 .then(res =>{
                     //console.log(res.data);
                     var test2 = [];
+
+                    
+                   
                     test2.push(res.data.current.weather[0].id);
                     test2.push(Math.round(res.data.current.temp-273.15));
                     test2.push(Math.round(res.data.current.feels_like-273.15));
@@ -92,11 +97,36 @@ exports.weather = function(query, callback){
                     forecast.push(test2);
 
                     for(var i = 0; i < 5; i++){
+                        dte =  res.data.daily[i].dt;
+                        //console.log("Local Time"+dte);
+                        let temp = new Date(dte*1000);
+                        //console.log(temp.getDay());
                         var test = [];
                         test.push(res.data.daily[i].weather[0].id);
                         test.push(Math.round((res.data.daily[i].temp.max)-273.15));
                         test.push(Math.round((res.data.daily[i].temp.min)-273.15));
                         test.push(res.data.daily[i].weather[0].description);
+                        if(temp.getDay() == 0){
+                            test.push("Sunday");
+                        }
+                        if(temp.getDay() == 1){
+                            test.push("Monday");
+                        }
+                        if(temp.getDay() == 2){
+                            test.push("Tuesday");
+                        }
+                        if(temp.getDay() == 3){
+                            test.push("Wednesday");
+                        }
+                        if(temp.getDay() == 4){
+                            test.push("Thursday");
+                        }
+                        if(temp.getDay() == 5){
+                            test.push("Friday");
+                        }
+                        if(temp.getDay() == 6){
+                            test.push("Saturday");
+                        }
                         
                         forecast.push(test);
 

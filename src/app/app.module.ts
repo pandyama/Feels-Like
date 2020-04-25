@@ -31,9 +31,7 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     CommonModule,
-    MaterialModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireModule
+    MaterialModule
     
   ],
   providers: [

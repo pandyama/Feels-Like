@@ -15,7 +15,7 @@
                  'weatherSnow': id >= 600 && id < 700,
                  'atmosphere': id >= 700 && id < 800,
                  'clouds': id >= 800 && id < 805}">
-  <h1>{{saved}}</h1>
+  <h1>{{saved}} {{current}}&#8451;</h1>
   <h2 class="description" >{{currentDescription}}</h2>
 
 <div class="weathertile">
@@ -24,8 +24,7 @@
     <li *ngFor="let w of weather">
       <mat-card class="projectCard">
         <mat-card-title class="cardTitle">
-          Monday
-
+          {{w[4]}}
         </mat-card-title>
         <!-- <mat-card-subtitle>
             Feb 2020 - March 2020
@@ -33,15 +32,15 @@
         <mat-card-subtitle>
 
         </mat-card-subtitle>
-        <mat-list>
+        <mat-list class="subCard">
           <mat-list-item>
-            {{w[1]}}
+            {{w[1]}}&#8451;
           </mat-list-item>
           <mat-list-item>
             {{w[3]}}
           </mat-list-item>
           <mat-list-item>
-            {{w[2]}}
+            {{w[2]}}&#8451;
           </mat-list-item>
         </mat-list>
       </mat-card>

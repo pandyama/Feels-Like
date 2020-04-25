@@ -39,6 +39,8 @@ export class AppComponent {
   ngOnInit(): void{
     this.saved = this.cookieService.get('Test');
     console.log("current searched city is " + this.cookieService.get('Test'));
+    this.getRefresh();
+
   }
 
   getWeather(){
@@ -58,6 +60,34 @@ export class AppComponent {
           this.current = res[0][1];
           this.description = res[0][3];
           this.city = this.value.toUpperCase();
+          this.currentDescription = res[0][3];
+          this.id = res[0][0];
+          console.log(res[0]);
+          console.log(this.id);
+          this.cookieService.set( 'Test', this.city, 2 );
+          this.cookieValue = this.cookieService.get('Test');
+          this.saved = this.cookieService.get('Test');
+          console.log("current searched city is " + this.cookieValue);
+      });
+  }
+
+  getRefresh(){
+    return this.http.get("http://localhost:3100/weather",{
+      headers: {city: this.cookieService.get('Test')}
+    })
+      .subscribe(res =>{
+          this.weather.push(res[1]);
+          this.weather.push(res[2]);
+          this.weather.push(res[3]);
+          this.weather.push(res[4]);
+          this.weather.push(res[5]);
+          // for(var i = 1; i < 5; i++){
+          //    this.weather.push(res[i]);
+          // }
+          this.feelslike = res[0][2];
+          this.current = res[0][1];
+          this.description = res[0][3];
+          this.city = this.cookieService.get('Test').toUpperCase();
           this.currentDescription = res[0][3];
           this.id = res[0][0];
           console.log(res[0]);
