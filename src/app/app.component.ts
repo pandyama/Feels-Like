@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
   value: string;
-  key = "0fe37647bf3c4095418a1c5392bb60cc";
+  key = "GET YOUR OWN KEY";
   weather: any = [];
   feelslike;
   current;
