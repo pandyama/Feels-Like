@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +23,11 @@ export class AppComponent {
   cookieValue;
   saved;
   show: boolean;
+  progress: boolean;
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(private http: HttpClient, 
+    private cookieService: CookieService,
+    private snackBar: MatSnackBar) {}
 
   ngOnInit(): void{
     this.saved = this.cookieService.get('Test');
@@ -37,6 +41,9 @@ export class AppComponent {
       headers: {city: this.value}
     })
       .subscribe(res =>{
+          this.progress = false;
+          this.show = true;
+          this.snackBar.dismiss();
           this.weather.push(res[1]);
           this.weather.push(res[2]);
           this.weather.push(res[3]);
@@ -65,6 +72,8 @@ export class AppComponent {
       headers: {city: this.cookieService.get('Test')}
     })
       .subscribe(res =>{
+          this.progress = false;
+          this.show = true;
           this.weather.push(res[1]);
           this.weather.push(res[2]);
           this.weather.push(res[3]);
@@ -98,14 +107,22 @@ export class AppComponent {
     let date: Date = new Date();
     console.log(date.getDay());
 
-    this.show = true;
+    if(value == ""){
+      this.snackBar.open("Please enter a valid city");
+    }
+    else{
+      console.log(this.cookieService.get('Test'));
+      this.progress = true;
+      this.snackBar.open("Request is taking longer than usual, thanks for patience!!");
+      this.weather = [];
+      this.color = [];
+      console.log(this.getWeather());
+    }
 
-    this.weather = [];
-    this.color = [];
+   
     // this.highWeather = [];
     // this.lowWeather = [];
     console.log(this.value);
-    console.log(this.getWeather());
 
   }
 
