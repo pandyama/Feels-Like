@@ -4,8 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Feels Like uses a simple OpenWeather REST API to pull 7 day basic weather forecast for the searched city. </br>
 The website is built as a Single-Page Application using standard principles of Angular
- - Design built in Adobe XD and implemented in SASS
- - Live on firebase
+- Backend is a Nodejs server live on Heroku
+- Backend is named Node-Server repo in my github
+
+https://feelslike-7d01f.web.app/
 
 https://portfolio-99cbb.web.app
 
