@@ -10,6 +10,7 @@ The website is built as a Single-Page Application using standard principles of A
 https://feelslike-7d01f.web.app/
 
 Below is the look and feel of the app
+
 ![1](https://github.com/pandyama/Klima/blob/master/Capture.PNG)
 ---
 
